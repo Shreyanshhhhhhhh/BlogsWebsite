@@ -1,0 +1,17 @@
+<h1>Blog Website</h1>
+<button>
+  <a href="{% url 'post_create' %}">New Post</a>
+</button>
+<ol>
+  {% for post in posts %}
+  <li>
+    <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+    <p>Created At: {{ post.created_at | date:"Y-m-d H:i:s" }}</p>
+    <p>Updated At: {{ post.updated_at | date:"Y-m-d H:i:s" }}</p>
+    <h4><a href="{% url 'post_update' post.id %}">Edit</a>  &nbsp;
+        <a href="{% url 'post_delete' post.id %}" style="color: red;">Delete</a> 
+    </h4>
+    <hr>
+  </li>
+  {% endfor %}
+</ol>

@@ -1,0 +1,5 @@
+<h1>{{ post.title }}</h1>
+<p style="font-size: large;">{{ post.content }}</p>
+<p style="font-size: small;">Created At: {{ post.created_at | date:"Y-m-d H:i:s" }}</p>
+<p style="font-size: small;">Updated At: {{ post.updated_at | date:"Y-m-d H:i:s" }}</p>
+<a href="{% url 'post_list' %}"> &lt; Back to List</a>

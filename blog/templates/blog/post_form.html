@@ -1,0 +1,12 @@
+<h1>{% if post %}Edit{% else %}New{% endif %} Post</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="title">Title:</label>
+    <input type="text" required name="title" id="title" value="{{ post.title|default:'' }}">
+    
+    <label for="content">Content:</label>
+    <textarea name="content" id="content" required>{{ post.content|default:'' }}</textarea>
+    
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'post_list' %}">Cancel</a>

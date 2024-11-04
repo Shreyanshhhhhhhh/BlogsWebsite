@@ -1,0 +1,15 @@
+# Django specific
+*.pyc
+__pycache__/
+db.sqlite3
+
+# Virtual environment
+venv/
+env/
+
+# Ignore Django migrations
+*/migrations/*
+
+# Ignore IDE files
+.vscode/
+.idea/
